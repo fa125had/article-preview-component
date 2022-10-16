@@ -23,13 +23,16 @@ Users should be able to:
 - See hover and focus states for interactive elements
 
 ### Screenshot
-
+![](./screenshots/desktop.png)
+![](./screenshots/desktop-active.png)
+![](./screenshots/mobile.png)
+![](./screenshots/mobile-active.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://github.com/fa125had/article-preview-component)
+- Live Site URL: [live site URL here](https://fa125had.github.io/article-preview-component/)
 
 ### Built with
 
