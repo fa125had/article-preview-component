@@ -1,0 +1,313 @@
+//Colors
+$color_veryDarkGrayishBlue: hsl(217, 19%, 35%);
+$color_desaturatedDarkBlue: hsl(214, 17%, 51%);
+$color_grayishBlue: hsl(212, 23%, 69%);
+$color_lightGrayishBlue: hsl(210, 46%, 95%);
+
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+$mainFont: Manrope;
+//Screens
+$mobile: 375px;
+$desktop: 1440px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 13px;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: $color_lightGrayishBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    .articleComponent {
+        max-width: $desktop;
+        background-color: white;
+        border-radius: 1rem;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        z-index: 4;
+        .articlePhoto {
+            background-image: url(./images/drawers.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 300px;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+        }
+        .articleDetails {
+            width: 450px;
+            padding: 1rem; 
+            #articleHeader {
+                font-family: $mainFont;
+                font-size: 1.2rem;
+                font-weight: 700;
+                padding: 1rem 2.8rem 0rem 1rem;
+                color: $color_veryDarkGrayishBlue;
+            }
+            #articleDescription {
+                font-family: $mainFont;
+                font-weight: 500;
+                color: $color_grayishBlue;
+                padding: 1rem 2rem 4.5rem 1rem;
+                line-height: 1.6rem;
+
+            }
+           
+        }
+        .articleAuthor {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1rem;
+            width: $mobile;
+            position: absolute;
+            bottom: 0;
+            right: 4rem;
+            .authorPhoto {
+                background-image: url(./images/avatar-michelle.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+                margin-right: 0.7rem;
+
+            }
+            #authorName {
+                color: $color_desaturatedDarkBlue;
+                font-size: 1.04rem;
+                font-weight: 700;
+                font-family: $mainFont;
+                margin-right: 4rem;
+
+            }
+            #publishDate {
+                font-family: $mainFont;
+                font-weight: 500;
+                color: $color_grayishBlue;
+
+            }
+            #shareButton {
+                background-color: $color_lightGrayishBlue;
+                padding: 0.8rem;
+                border-radius: 100%;
+                align-self: center;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .articleSharing {
+            background-color: $color_veryDarkGrayishBlue;
+            width: 18rem;
+            border-radius: 1rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            position: absolute;
+            bottom: 5.8rem;
+            left: 11.3rem;
+            z-index: 5;
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 1rem solid transparent;
+                border-right: 1rem solid $color_veryDarkGrayishBlue;
+                rotate: -90deg;
+                border-bottom: 1rem solid transparent;
+                position: absolute;
+                bottom: 0;
+                top: 3.5rem;
+                left: 50%;
+            }
+            #activeShareButton {
+                display: none;
+            }
+            .socials {
+                width: 100%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 1.1rem;
+                p {
+                    text-transform: uppercase;
+                    letter-spacing: 0.5rem;
+                    font-family: $mainFont;
+                    color: $color_grayishBlue;
+                }
+                img {
+                    &:hover {
+                        cursor: pointer;
+                        border-bottom: 0.1rem solid white;
+                        padding-bottom: 0.5rem;
+                    }
+                }
+            
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    .container {
+        height: 100vh;
+        width: 100vw;
+        background-color: $color_lightGrayishBlue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: all 500ms;
+        .articleComponent {
+            width: $mobile;
+            height: 645px;
+            background-color: white;
+            border-radius: 1rem;
+            margin: 1rem;
+            position: relative;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            transition: all 1s;
+
+            .articlePhoto {
+                background-image: url(./images/drawers.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 40%;
+                width: $mobile;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 0;
+            }
+            .articleDetails {
+                max-width: $mobile;
+                padding: 1rem; 
+                #articleHeader {
+                    font-family: $mainFont;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    padding: 2rem 1rem 0rem 1rem;
+                    color: $color_veryDarkGrayishBlue;
+                }
+                #articleDescription {
+                    font-family: $mainFont;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: $color_grayishBlue;
+                    padding: 1rem 0.7rem 2.2rem 1rem;
+                    line-height: 1.6rem;
+
+                }
+               
+            }
+            .articleAuthor {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 1rem;
+                width: $mobile;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                .authorPhoto {
+                    background-image: url(./images/avatar-michelle.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: 100%;
+                    margin-right: 0.7rem;
+
+                }
+                #authorName {
+                    color: $color_desaturatedDarkBlue;
+                    font-size: 1.04rem;
+                    font-weight: 700;
+                    font-family: $mainFont;
+                    margin-right: 4rem;
+
+                }
+                #publishDate {
+                    font-family: $mainFont;
+                    font-weight: 500;
+                    color: $color_grayishBlue;
+
+                }
+                #shareButton {
+                    background-color: $color_lightGrayishBlue;
+                    padding: 0.8rem;
+                    border-radius: 100%;
+                    align-self: center;
+
+                }
+            }
+            .articleSharing {
+                background-color: $color_veryDarkGrayishBlue;
+                width: $mobile;
+                transition: 700ms all;
+                border-radius: 0;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                display: none;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+                padding-right: 2rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                #activeShareButton {
+                    display: block;
+                    background-color: $color_desaturatedDarkBlue;
+                    padding: 1rem;
+                    border-radius: 100%;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .socials {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1.2rem;
+                    margin-left: 1rem;
+                    p {
+                        text-transform: uppercase;
+                        letter-spacing: 0.5rem;
+                        font-family: $mainFont;
+                        color: $color_grayishBlue;
+                    }
+
+                
+                }
+
+            }
+        }
+    }
+}
+@media only screen and (width < 360px) {
+    * {
+        visibility: hidden;
+        background-color: black;
+    }
+}
